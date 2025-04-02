@@ -8,7 +8,11 @@ import java.util.function.Function;
  */
 public class ListADTImpl<T> implements ListADT<T> {
   private GenericListADTNode<T> head;
-
+  
+  /**
+   * Constructs an empty list.
+   * Initializes the list with an empty node.
+   */
   public ListADTImpl() {
     head = new GenericEmptyNode();
   }

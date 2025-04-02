@@ -25,7 +25,7 @@ public interface ImmutableListADT<T> extends CommonListADT<T> {
    * @param converter the function that converts T into R
    * @param <R>       the type of data in the resulting list
    * @return an immutable list that is identical in structure to this list,
-   * but has data of type R
+   *          but has data of type R
    */
   @Override
   <R> ImmutableListADT<R> map(Function<T, R> converter);

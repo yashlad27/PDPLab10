@@ -52,7 +52,6 @@ public class ImmutableListADTImpl<T> implements ImmutableListADT<T> {
   public <R> ImmutableListADT<R> map(Function<T, R> converter) {
     ImmutableListADTImpl<R> result = new ImmutableListADTImpl<>();
 
-    // Manually map each element to maintain immutability
     for (int i = 0; i < this.getSize(); i++) {
       result.addBack(converter.apply(this.get(i)));
     }
@@ -64,7 +63,6 @@ public class ImmutableListADTImpl<T> implements ImmutableListADT<T> {
   public MutableListADT<T> getMutableList() {
     MutableListADTImpl<T> mutableList = new MutableListADTImpl<>();
 
-    // Copy each element to the new mutable list
     for (int i = 0; i < this.getSize(); i++) {
       mutableList.addBack(this.get(i));
     }
@@ -111,8 +109,6 @@ public class ImmutableListADTImpl<T> implements ImmutableListADT<T> {
      * @return the constructed immutable list
      */
     public ImmutableListADT<T> build() {
-      // Return a new immutable list with a copy of the internal list
-      // to ensure the builder doesn't retain a reference to the same list
       ListADTImpl<T> copy = new ListADTImpl<>();
       for (int i = 0; i < this.list.getSize(); i++) {
         copy.addBack(this.list.get(i));
