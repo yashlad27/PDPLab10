@@ -65,13 +65,11 @@ public class MutableListADTImpl<T> implements MutableListADT<T> {
 
   @Override
   public ImmutableListADT<T> getImmutableList() {
-    ImmutableListADT.Builder<T> builder = new ImmutableListADTImpl.Builder<>();
+    ImmutableListADTImpl.Builder<T> builder = new ImmutableListADTImpl.Builder<>();
 
-    // Add each element to the builder
     for (int i = 0; i < this.getSize(); i++) {
       builder.add(this.get(i));
     }
-
     return builder.build();
   }
 
