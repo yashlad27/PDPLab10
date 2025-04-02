@@ -4,6 +4,7 @@ import java.util.function.Function;
 
 /**
  * This interface represents a generic list.
+ *
  * @param <T> the type of elements in this list
  */
 public interface ListADT<T> {
@@ -46,10 +47,10 @@ public interface ListADT<T> {
    * @param converter the function that converts T into R
    * @param <R>       the type of data in the resulting list
    * @return the resulting list that is identical in structure to this list,
-   *          but has data of type R
+   * but has data of type R
    */
   <R> ListADT<R> map(Function<T, R> converter);
-  
+
   /**
    * Return the number of objects currently in this list.
    *

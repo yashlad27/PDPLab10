@@ -77,8 +77,7 @@ public class GenericElementNode<T> implements GenericListADTNode<T> {
     String rest = this.rest.toString();
     if (rest.length() > 0) {
       return objstring + " " + rest;
-    }
-    else {
+    } else {
       return objstring;
     }
   }

@@ -69,7 +69,7 @@ public interface GenericListADTNode<T> {
    * @param converter the function needed to convert T into R
    * @param <R>       the type of the data in the returned list
    * @return the head of a list that is structurally identical to this list,
-   *          but contains data of type R
+   * but contains data of type R
    */
   <R> GenericListADTNode<R> map(Function<T, R> converter);
 }
