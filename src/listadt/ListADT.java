@@ -3,11 +3,12 @@ package listadt;
 import java.util.function.Function;
 
 /**
- * This interface represents a generic list.
+ * This interface represents a generic list with both observer and mutator operations.
+ * It extends CommonListADT to inherit all non-mutating operations.
  *
  * @param <T> the type of elements in this list
  */
-public interface ListADT<T> {
+public interface ListADT<T> extends CommonListADT<T> {
   /**
    * Add an object to the front of this list.
    *
@@ -19,7 +20,7 @@ public interface ListADT<T> {
    * Add an object to the back of this list (so it is the last object in the
    * list.
    *
-   * @param b the object to be added to teh back of this list
+   * @param b the object to be added to the back of this list
    */
   void addBack(T b);
 
@@ -31,7 +32,6 @@ public interface ListADT<T> {
    * @param b     the object to be added to the list
    */
   void add(int index, T b);
-
 
   /**
    * Remove the first instance of this object from this list.
@@ -49,22 +49,6 @@ public interface ListADT<T> {
    * @return the resulting list that is identical in structure to this list,
    * but has data of type R
    */
+  @Override
   <R> ListADT<R> map(Function<T, R> converter);
-
-  /**
-   * Return the number of objects currently in this list.
-   *
-   * @return the size of the list
-   */
-  int getSize();
-
-  /**
-   * Get the (index)th object in this list.
-   *
-   * @param index the index of the object to be returned
-   * @return the object at the given index
-   * @throws IllegalArgumentException if an invalid index is passed
-   */
-  T get(int index) throws IllegalArgumentException;
-
 }
